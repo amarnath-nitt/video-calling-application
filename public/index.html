@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title>Video Chat App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="main.css" rel="stylesheet">
+    <link href="style.css">
+</head>
+
+<body>
+    
+    <div class="container-fluid">
+        <div class="title">
+            <p>**********Welcome to &lt;AJ/&gt;Coding Video Chatting App**********</p>
+        </div>
+        <div class="row h-10 w-100">
+            <div class="col">
+                <select id="filter" class="w-100 bg-dark text-light ml-2 mt-2 select font-weight-bold border">
+                    <option value="none">Normal Background</option>
+                    <option value="grayscale(100%)">Black Background</option>
+                    <option value="sepia(100%)">Old Background</option>
+                    <option value="contrast(150%)">Lumination Background</option>
+                    <option value="blur(20px)">Hidden Mist Background</option>
+                    <option value="invert(100%)">Dracula Background</option>
+                    <option value="hue-rotate(180deg">X-men Beast Background</option>
+                    <option value="saturate(25)">Super Saiyan God Background</option>
+                </select>
+            </div>
+            <div class="col">
+                <div class="float-right mt-3">
+                    <input class="form-check-input" type="checkbox" id="theme">
+                    <label class="form-check-label" for="theme">
+                        BlackTheme
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row h-90 w-100">
+            <div class="col-12 col-sm-6 d-flex justify-content-center">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video class="embed-responsive-item" muted></video>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 d-flex justify-content-center">
+                <div id="peerDiv" class="embed-responsive embed-responsive-16by9">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="bundle.js"></script>
+    
+    <div id="container" class="recording">
+        <video id="gum" playsinline autoplay muted></video>
+        <video id="recorded" playsinline loop></video>
+  
+        <div>
+          <button id="start">Start camera</button>
+          <button id="record" disabled>Record</button>
+          <button id="play" disabled>Play</button>
+          <button id="download" disabled>Download</button>
+        </div>
+  
+        <div>
+          <h4>Media Stream Recording System</h4>
+          <p>
+            Echo cancellation: <input type="checkbox" id="echoCancellation" />
+          </p>
+        </div>
+  
+        <div>
+          <span id="errorMsg"></span>
+        </div>
+      </div>
+      <script src="app.js"></script>
+</body>
+
+</html>
